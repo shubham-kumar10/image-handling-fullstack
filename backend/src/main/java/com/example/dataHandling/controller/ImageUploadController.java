@@ -44,7 +44,7 @@ public class ImageUploadController {
 	public Image getImage(@PathVariable("imgName") String imgName) throws IOException {
 		final Optional<Image> imgData = imageRepository.findByName(imgName);
 		Image img = new Image(imgData.get().getName(), imgData.get().getType(),
-				decompressBytes(imgData.get().getPicBytes()));
+				decompressBytes(imgData.get().getPicByte()));
 		return img;
 	}
 
